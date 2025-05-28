@@ -2,3 +2,7 @@ baseURL = "https://bruno-costanzo.github.io/blog/"
 languageCode = "es"
 title = "Bruno Costanzo"
 theme = "cactus"
+
+[services]
+[services.googleAnalytics]
+id = "G-H5GJBVQWGP"
