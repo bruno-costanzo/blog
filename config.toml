@@ -1,0 +1,4 @@
+baseURL = "https://bruno-costanzo.github.io/blog/"
+languageCode = "es"
+title = "Bruno Costanzo"
+theme = "cactus"
