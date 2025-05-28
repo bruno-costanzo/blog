@@ -1,4 +1,10 @@
-name: Deploy to GitHub Pages
+name: Deploy Hugo site to GitHub Pages
+
+# 1) PERMISSIONS A NIVEL DE WORKFLOW
+permissions:
+  contents: read # checkout del repo
+  pages: write # para publicar en GitHub Pages
+  id-token: write # (necesario para configure-pages)
 
 on:
   push:
@@ -6,25 +12,40 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
+      # 2) Checkout con submódulos
       - name: Checkout
         uses: actions/checkout@v3
         with:
           submodules: true
+          persist-credentials: true # <— muy importante, usa el GITHUB_TOKEN para pushes
 
+      # 3) Instalar Hugo extended
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: "latest"
           extended: true
 
+      # 4) Generar el sitio
       - name: Build
         run: hugo --minify
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      # 5) Configurar GitHub Pages
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      # 6) Subir artefactos estáticos
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          path: ./public
+
+      # 7) Deploy a gh-pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
