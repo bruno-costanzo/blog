@@ -37,13 +37,16 @@ hugo new posts/your-post-title.md
 
 # Clean Hugo module cache
 hugo mod clean
+
+# Update theme submodule
+git submodule update --remote themes/cactus
 ```
 
 ## Architecture & Structure
 
 ### Key Directories
 - `content/posts/` - Blog posts in Markdown format with YAML frontmatter
-- `themes/cactus/` - Custom fork of Cactus theme (Git submodule)
+- `themes/cactus/` - Custom fork of Cactus theme (Git submodule from https://github.com/bruno-costanzo/hugo-theme-cactus.git)
 - `public/` - Generated static site output (gitignored)
 - `.github/workflows/` - GitHub Actions for automated deployment
 
@@ -58,13 +61,17 @@ draft: true  # Set to false to publish
 ```
 
 ### Deployment
-The site automatically deploys to GitHub Pages when changes are pushed to the main branch via the `.github/workflows/deploy.yml` workflow. The site is accessible at https://bruno-costanzo.github.io/blog/
+The site automatically deploys to GitHub Pages when changes are pushed to the main branch via the `.github/workflows/deploy.yml` workflow. The workflow:
+1. Checks out the repository with submodules
+2. Installs Hugo extended version
+3. Builds the site with `hugo --minify`
+4. Uploads the `public/` directory as artifacts
+5. Deploys to GitHub Pages
+
+The site is accessible at https://bruno-costanzo.github.io/blog/
 
 ### Theme Management
-The Cactus theme is managed as a Git submodule pointing to a custom fork. To update the theme:
-```bash
-git submodule update --remote themes/cactus
-```
+The Cactus theme is managed as a Git submodule pointing to a custom fork at https://github.com/bruno-costanzo/hugo-theme-cactus.git. The submodule is automatically initialized during the GitHub Actions deployment process.
 
 ## Configuration
 
@@ -72,3 +79,11 @@ Main configuration is in `config.toml`:
 - Base URL: https://bruno-costanzo.github.io/blog/
 - Language: Spanish (es)
 - Analytics: Google Analytics 4 (G-H5GJBVQWGP)
+- Theme: cactus
+
+## Important Notes
+
+- Hugo must be installed locally to run development commands
+- The `public/` directory is gitignored and generated during build
+- All content is written in Spanish
+- The theme is a custom fork, so any theme modifications should be made in the forked repository

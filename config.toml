@@ -1,8 +1,104 @@
 baseURL = "https://bruno-costanzo.github.io/blog/"
-languageCode = "es"
-title = "Bruno Costanzo"
 theme = "cactus"
+defaultContentLanguage = "es"
+defaultContentLanguageInSubdir = true
+
+# Asegurar barras finales en URLs
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# Configuración de URLs
+canonifyURLs = true
+relativeURLs = false
+
+# Taxonomías
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[languages]
+  [languages.es]
+    languageCode = "es"
+    languageName = "Español"
+    title = "Bruno Costanzo"
+    weight = 1
+    
+  [languages.en]
+    languageCode = "en"
+    languageName = "English"
+    title = "Bruno Costanzo"
+    weight = 2
+
+# Menús en español
+[[languages.es.menu.main]]
+name = "Inicio"
+url = "/es/"
+weight = 1
+
+[[languages.es.menu.main]]
+name = "Artículos"
+url = "/es/posts"
+weight = 2
+
+[[languages.es.menu.main]]
+name = "Proyectos"
+url = "/es/projects"
+weight = 3
+
+[[languages.es.menu.main]]
+name = "Sobre mí"
+url = "/es/about"
+weight = 4
+
+[[languages.es.menu.main]]
+name = "Contacto"
+url = "/es/contact"
+weight = 5
+
+# Menús en inglés
+[[languages.en.menu.main]]
+name = "Home"
+url = "/en/"
+weight = 1
+
+[[languages.en.menu.main]]
+name = "Writings"
+url = "/en/posts"
+weight = 2
+
+[[languages.en.menu.main]]
+name = "Projects"
+url = "/en/projects"
+weight = 3
+
+[[languages.en.menu.main]]
+name = "About"
+url = "/en/about"
+weight = 4
+
+[[languages.en.menu.main]]
+name = "Contact"
+url = "/en/contact"
+weight = 5
 
 [services]
 [services.googleAnalytics]
 id = "G-H5GJBVQWGP"
+
+# Parámetros específicos por idioma
+[languages.es.params]
+description = "Blog personal de Bruno Costanzo sobre desarrollo, tecnología y más."
+dateFormat = "02-01-2006"
+
+[languages.en.params]
+description = "Bruno Costanzo's personal blog about development, technology and more."
+dateFormat = "2006-01-02"
+
+# Parámetros globales
+[params]
+colortheme = "light" # Opciones: dark, light, white, classic
+rss = true
+mainSection = "posts"
+showReadTime = true
