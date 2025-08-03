@@ -32,7 +32,10 @@ jobs:
 
       # 4) Generar el sitio
       - name: Build
-        run: hugo --minify
+        run: |
+          hugo --minify
+          ls -la public/images/
+          ls -la public/images/posts/ || true
 
       # 5) Configurar GitHub Pages
       - name: Setup Pages
