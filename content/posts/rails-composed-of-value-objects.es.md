@@ -5,6 +5,9 @@ draft: false
 tags: ["rails", "ruby", "patrones-de-diseño", "value-objects"]
 categories: ["programación"]
 description: "Aprende cómo usar composed_of de Rails para modelar objetos de valor que representan múltiples atributos como una única unidad conceptual, sin la sobrecarga de tablas de base de datos o concerns."
+author: "Bruno Costanzo"
+image: "/blog/images/posts/rails-composed-of.png"
+keywords: ["rails", "ruby", "composed_of", "value objects", "patrones de diseño", "desarrollo web", "programación orientada a objetos"]
 ---
 
 En el mundo real (y en el código), hay entidades que se sitúan en algún lugar entre un escalar simple y un objeto completo. ¿Qué significan realmente cosas como _80 kilogramos_, _25 kilómetros por hora_ o _25×25×50 cm_? Claramente no son escalares en el sentido estricto—no pueden reducirse a un valor único como _25_ o _"Buenos Aires"_. Pero también comparten un rasgo clave con los escalares: no existen por sí solos en la realidad. _80 kilogramos_ describe el peso de algo, así como _25 km/h_ representa la velocidad de algo. Las dimensiones describen una caja, un mueble o un piano—pero significan poco por sí solas.

@@ -10,7 +10,7 @@ defaultContentLanguageInSubdir = true
       unsafe = true
 
 # Configuración de URLs
-canonifyURLs = true
+canonifyURLs = false
 relativeURLs = false
 
 # Taxonomías
@@ -102,3 +102,8 @@ colortheme = "light" # Opciones: dark, light, white, classic
 rss = true
 mainSection = "posts"
 showReadTime = true
+author = "Bruno Costanzo"
+defaultImage = "/images/default-social.png"
+twitter = "tu_usuario_twitter" # Cambia esto por tu usuario de Twitter
+keywords = ["desarrollo", "programación", "tecnología", "software", "blog técnico"]
+css = ["/css/custom.css"]
