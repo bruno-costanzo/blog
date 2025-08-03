@@ -5,11 +5,9 @@ date: 2025-08-02
 
 ## Hola, soy Bruno Costanzo
 
-Soy un ingeniero de software Ruby on Rails orientado a resultados, con experiencia en la construcción de soluciones de software escalables y de alta calidad. Me especializo en aprovechar TDD, máquinas de estado y patrones de diseño para abordar problemas complejos de manera eficiente.
+Desarrollador Ruby on Rails. Especializado en TDD, máquinas de estado y patrones de diseño.
 
 ### Mi Experiencia
-
-Con experiencia liderando proyectos, optimizando rendimiento y asegurando la confiabilidad del sistema, prospero en entornos de ritmo acelerado que demandan precisión técnica, colaboración y resolución de problemas.
 
 Actualmente trabajo como **Full Stack Developer** en **Renuo AG** desde julio 2025, una agencia de software especializada en Ruby on Rails con sede en Zurich, Suiza.
 
