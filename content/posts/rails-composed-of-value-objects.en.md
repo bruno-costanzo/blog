@@ -5,6 +5,9 @@ draft: false
 tags: ["rails", "ruby", "design-patterns", "value-objects"]
 categories: ["programming"]
 description: "Learn how to use Rails' composed_of to model value objects that represent multiple attributes as a single conceptual unit, without the overhead of database tables or concerns."
+author: "Bruno Costanzo"
+image: "/blog/images/posts/rails-composed-of.png"
+keywords: ["rails", "ruby", "composed_of", "value objects", "design patterns", "web development", "object-oriented programming"]
 ---
 
 In the real world (and in code), there are entities that sit somewhere between a plain scalar and a full-fledged object. What do things like _80 kilograms_, _25 kilometers per hour_, or _25×25×50 cm_ really mean? They're clearly not scalars in the strict sense—they can't be reduced to a single value like _25_ or _"Buenos Aires"_. But they also share a key trait with scalars: they don't exist on their own in reality. _80 kilograms_ describes the weight of something, just as _25 km/h_ represents the speed of something. Dimensions describe a box, a piece of furniture, or a piano—but mean little on their own.
