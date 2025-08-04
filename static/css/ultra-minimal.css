@@ -1,0 +1,353 @@
+/* Ultra Minimal Design - Less is More */
+
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333 !important;
+  background: #fff !important;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem 0;
+  line-height: 1.3;
+  color: #111;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+h1:first-child,
+h2:first-child,
+h3:first-child {
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Header */
+#header {
+  padding: 1rem 0;
+  margin-bottom: 1.5rem;
+}
+
+#header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+#header #logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
+  display: inline-block;
+  float: left;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Navigation - Desktop */
+#header #nav {
+  margin-top: 0.5rem;
+  clear: both;
+}
+
+#header #nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+#header #nav a {
+  color: #666;
+  font-size: 0.9rem;
+  padding: 0.25rem 0;
+}
+
+#header #nav a:hover {
+  color: #000;
+}
+
+/* Language selector */
+#header #nav .lang-selector {
+  margin-left: auto;
+}
+
+#header #nav .lang-selector .active-lang {
+  background: #f5f5f5;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+#header #nav .lang-selector a {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Content */
+.content {
+  margin-bottom: 2rem;
+}
+
+.content a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+/* Lists */
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+/* Code */
+code {
+  font-family: Monaco, monospace;
+  font-size: 0.9em;
+  background: #f5f5f5;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+pre {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+
+/* Footer */
+#footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#footer nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+#footer a {
+  color: #666;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  color: #333;
+}
+
+/* Mobile Navigation */
+#header #nav .icon {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 0.75rem;
+  }
+  
+  #header #logo {
+    width: 32px;
+    height: 32px;
+  }
+  
+  #header h1 {
+    font-size: 1.25rem;
+  }
+  
+  /* Mobile menu */
+  #header #nav .icon {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 0.75rem;
+  }
+  
+  #header #nav .icon a {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+  
+  #header #nav ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+  
+  #header #nav ul.responsive {
+    transform: translateX(0);
+  }
+  
+  #header #nav li {
+    text-align: center;
+  }
+  
+  #header #nav a {
+    font-size: 1.125rem;
+    padding: 1rem;
+    display: block;
+  }
+  
+  #header #nav .lang-selector {
+    margin-left: 0;
+  }
+  
+  #footer {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    font-size: 17px;
+    padding: 1.5rem;
+  }
+  
+  #header #logo {
+    width: 45px;
+    height: 45px;
+  }
+  
+  #header h1 {
+    font-size: 1.625rem;
+  }
+  
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.75rem; }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  body {
+    font-size: 18px;
+    padding: 2rem 0;
+  }
+  
+  #header #logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  #header h1 {
+    font-size: 1.75rem;
+  }
+  
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+}
+
+/* Hide theme elements */
+.py4,
+.px3,
+.mx-auto,
+.max-width,
+#footer-post,
+#menu,
+#menu-icon,
+#menu-icon-tablet,
+#top-icon-tablet,
+.post-actions,
+.post-nav {
+  all: unset !important;
+  display: none !important;
+}
+
+/* Force clean styles */
+* {
+  animation: none !important;
+  background-image: none !important;
+  text-decoration: none !important;
+  border: none !important;
+}
+
+a:hover {
+  background-image: none !important;
+}
+
+/* Override theme classes */
+body {
+  all: unset !important;
+  display: block !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  color: #333 !important;
+  background: #fff !important;
+  max-width: 42rem !important;
+  margin: 0 auto !important;
+  padding: 1rem !important;
+}
