@@ -94,6 +94,25 @@
   text-align: left !important;
 }
 
+/* Fix header top spacing - make it much smaller */
+#header {
+  margin-top: 0 !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.75rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Fix body and main container spacing */
+body {
+  margin: 0 !important;
+  padding-top: 0 !important;
+}
+
+.content.index.py4 {
+  padding-top: 0 !important;
+  padding-bottom: 1rem !important;
+}
+
 /* Force light mode */
 body {
   background: #fff !important;
