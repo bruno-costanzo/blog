@@ -39,8 +39,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Source Sans Pro", Roboto, sans-serif;
   font-size: var(--text-base);
   line-height: var(--leading-relaxed);
-  color: #333;
-  background: #fff;
+  color: #333 !important;
+  background: #fff !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -397,13 +397,14 @@ blockquote {
   #header #nav .icon {
     display: block;
     position: absolute;
-    top: var(--space-lg);
-    right: var(--space-md);
+    top: 1rem;
+    right: 1rem;
   }
   
   #header #nav .icon a {
-    padding: var(--space-sm);
-    font-size: var(--text-xl);
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    color: #333 !important;
   }
   
   #header #nav ul {
@@ -412,13 +413,13 @@ blockquote {
     left: 0;
     right: 0;
     bottom: 0;
-    background: white;
+    background: white !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: var(--space-lg);
+    gap: 2rem;
     transform: translateX(-100%);
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
     z-index: 999;
   }
   
@@ -429,85 +430,35 @@ blockquote {
   #header #nav ul li:not(.icon) {
     width: 100%;
     text-align: center;
+    border: none !important;
+    margin: 0 !important;
+  }
+  
+  #header #nav ul li:not(.icon)::after {
+    display: none !important;
   }
   
   #header #nav ul a {
     display: block;
-    padding: var(--space-md);
-    font-size: var(--text-lg);
+    padding: 1rem;
+    font-size: 1.125rem;
+    color: #333 !important;
   }
   
   #header #nav .lang-selector {
     margin-left: 0;
-    margin-top: var(--space-lg);
+    margin-top: 1rem;
+  }
+  
+  /* Fix header layout on mobile */
+  #header {
+    position: relative;
   }
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #1a1a1a;
-    color: #e0e0e0;
-  }
-  
-  #header #nav a {
-    color: #aaa;
-  }
-  
-  #header #nav a:hover {
-    color: #fff;
-  }
-  
-  .content a {
-    color: #4a9eff;
-  }
-  
-  code {
-    background: #2a2a2a;
-  }
-  
-  pre {
-    background: #2a2a2a;
-  }
-  
-  blockquote {
-    border-left-color: #444;
-    color: #aaa;
-  }
-  
-  .category-link,
-  .tag-link {
-    background: #2a2a2a;
-    color: #aaa;
-  }
-  
-  .category-link:hover,
-  .tag-link:hover {
-    background: #333;
-    color: #e0e0e0;
-  }
-  
-  #footer {
-    border-top-color: #333;
-    color: #aaa;
-  }
-  
-  #footer a {
-    color: #aaa;
-  }
-  
-  #footer a:hover {
-    color: #e0e0e0;
-  }
-  
-  #header #nav .lang-selector .active-lang {
-    background: #333;
-    color: #e0e0e0;
-  }
-  
-  #header #nav li:not(:last-child):not(.icon) {
-    border-right-color: #444;
-  }
+/* Force light mode - disable dark mode for now */
+* {
+  color-scheme: light !important;
 }
 
 /* Remove all previous problematic styles */
