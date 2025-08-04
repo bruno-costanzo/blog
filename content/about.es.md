@@ -19,7 +19,7 @@ Trabajo principalmente con **Ruby, Rails, RSpec, Kamal, PostgreSQL, SQL, Hotwire
 
 ### Idiomas
 
-Hablo fluidamente inglés y español, con conocimientos básicos de italiano.
+Hablo fluidamente inglés y español, con nivel intermedio de italiano.
 
 ### Ubicación
 
