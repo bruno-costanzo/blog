@@ -3,9 +3,14 @@
 /* Fix navigation spacing */
 #header #nav ul li {
   margin-right: 1rem !important;
+  border-right: none !important;
 }
 
 #header #nav ul li:last-child {
+  margin-right: 0 !important;
+}
+
+#header #nav ul li a {
   margin-right: 0 !important;
 }
 
@@ -34,13 +39,37 @@
   background-image: none !important;
 }
 
-/* Hide floating menus */
+/* Hide floating menus and overlays */
 #footer-post,
 #menu,
 #menu-icon,
 #menu-icon-tablet,
-#top-icon-tablet {
+#top-icon-tablet,
+.post-actions,
+.post-nav,
+#actions-footer {
   display: none !important;
+}
+
+/* Fix heading alignment - remove any pseudo elements */
+.content h1::before,
+.content h2::before,
+.content h3::before,
+.content h4::before,
+.content h5::before,
+.content h6::before {
+  display: none !important;
+}
+
+/* Ensure headings have normal positioning */
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  position: relative !important;
+  text-align: left !important;
 }
 
 /* Force light mode */
