@@ -64,7 +64,7 @@ url = "/en/"
 weight = 1
 
 [[languages.en.menu.main]]
-name = "Writings"
+name = "Articles"
 url = "/en/posts"
 weight = 2
 
@@ -91,10 +91,12 @@ id = "G-H5GJBVQWGP"
 [languages.es.params]
 description = "Blog personal de Bruno Costanzo sobre desarrollo, tecnología y más."
 dateFormat = "02-01-2006"
+mainSectionTitle = "Artículos"
 
 [languages.en.params]
 description = "Bruno Costanzo's personal blog about development, technology and more."
 dateFormat = "2006-01-02"
+mainSectionTitle = "Articles"
 
 # Parámetros globales
 [params]

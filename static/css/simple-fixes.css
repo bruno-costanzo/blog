@@ -78,6 +78,28 @@ body {
   color: #333 !important;
 }
 
+/* Active menu item styling */
+#header #nav a[href*="/posts"] {
+  font-weight: 600 !important;
+}
+
+/* Current page highlighting - check if URL matches */
+body[data-page-url*="/posts"] #header #nav a[href*="/posts"],
+body[data-page-url*="/about"] #header #nav a[href*="/about"],
+body[data-page-url*="/contact"] #header #nav a[href*="/contact"],
+body[data-page-url*="/projects"] #header #nav a[href*="/projects"] {
+  font-weight: 600 !important;
+  color: #000 !important;
+}
+
+/* Fallback - make posts bold when on posts pages */
+.section-posts #header #nav a[href*="/posts"],
+.list #header #nav a[href*="/posts"],
+.single #header #nav a[href*="/posts"] {
+  font-weight: 600 !important;
+  color: #000 !important;
+}
+
 /* Better mobile font size */
 @media (max-width: 767px) {
   body {
