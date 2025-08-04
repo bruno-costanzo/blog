@@ -1,359 +1,79 @@
-/* Import responsive design improvements */
-@import url('responsive.css');
+/* Import minimalist design system */
+@import url('minimalist-design.css');
 
-/* Custom minimalist design enhancements */
-:root {
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.3s ease;
-  
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+/* Override any conflicting styles from theme */
+.content a {
+  background-image: none !important;
+  text-decoration: none !important;
 }
 
-/* Smooth transitions for interactive elements */
-a, button, input, select, textarea, .featured-image img {
-  transition: all var(--transition-fast);
+.content a:hover {
+  background-image: none !important;
 }
 
-/* Improve focus states for accessibility */
-*:focus {
-  outline: 2px solid var(--color-accent-1, #4a9eff);
-  outline-offset: 2px;
+/* Remove theme's heading styles */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: normal !important;
 }
 
-/* Estilos para imagen destacada */
+/* Featured image - minimal style */
 .featured-image {
-    margin: 2rem 0;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 1.5rem 0;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
 }
 
 .featured-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.featured-image:hover img {
-    transform: scale(1.02);
-}
-
-/* Ajustes responsive */
-@media (max-width: 768px) {
-    .featured-image {
-        margin: 1.5rem -1rem;
-        border-radius: 0;
-    }
-}
-
-/* Centrar imágenes en el contenido del post */
-.content img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 2rem auto;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilos para galería de imágenes si existe */
-.article-gallery {
-    margin: 2rem 0;
-}
-
-/* Mejorar aspecto de las meta tags */
-.meta {
-    margin-bottom: 1.5rem;
-}
-
-.article-category,
-.article-tag {
-    margin-top: 0.5rem;
-}
-
-.category-link,
-.tag-link {
-    background-color: #f0f0f0;
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    text-decoration: none;
-    font-size: 0.9em;
-    transition: background-color 0.2s ease;
-}
-
-.category-link:hover,
-.tag-link:hover {
-    background-color: #e0e0e0;
-}
-
-/* Logo styling */
-#header #logo {
-    background-size: contain !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-}
-
-/* Dark theme support */
-body.dark .category-link,
-body.dark .tag-link {
-    background-color: #333;
-    color: #ddd;
-}
-
-body.dark .category-link:hover,
-body.dark .tag-link:hover {
-    background-color: #444;
-}
-
-/* Minimalist design improvements */
-
-/* Clean card design for posts */
-.post-item {
-  margin-bottom: var(--spacing-lg);
-  padding: var(--spacing-md);
-  border-radius: 8px;
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-}
-
-.post-item:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-/* Improved typography hierarchy */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin-top: var(--spacing-lg);
-  margin-bottom: var(--spacing-md);
-}
-
-/* Better link styling */
-.content a:not(.no-underline) {
-  position: relative;
-  color: inherit;
-  text-decoration: none;
-  background-image: none;
-}
-
-.content a:not(.no-underline)::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: currentColor;
-  opacity: 0.3;
-  transition: opacity var(--transition-fast), transform var(--transition-fast);
-  transform: scaleX(0);
-  transform-origin: right;
-}
-
-.content a:not(.no-underline):hover::after {
-  opacity: 1;
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-/* Clean blockquote design */
-blockquote {
-  margin: var(--spacing-lg) 0;
-  padding: var(--spacing-md) var(--spacing-lg);
-  border-left: 4px solid var(--color-accent-1, #4a9eff);
-  background-color: rgba(0, 0, 0, 0.02);
-  font-style: italic;
-  border-radius: 0 8px 8px 0;
-}
-
-/* Improved code blocks */
-pre {
-  background-color: rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: var(--spacing-md);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-code {
-  font-size: 0.9em;
-  padding: 0.2em 0.4em;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-}
-
-pre code {
-  background: none;
-  padding: 0;
-}
-
-/* Clean horizontal rule */
-hr {
-  border: none;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.1) 80%, transparent);
-  margin: var(--spacing-xl) 0;
-}
-
-/* Improved form elements */
-input, textarea, select {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  padding: var(--spacing-sm);
-  font-size: inherit;
-  font-family: inherit;
-  background-color: rgba(0, 0, 0, 0.02);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-input:focus, textarea:focus, select:focus {
-  border-color: var(--color-accent-1, #4a9eff);
-  box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
-  outline: none;
-}
-
-/* Button styles */
-button, .button {
-  display: inline-block;
-  padding: var(--spacing-sm) var(--spacing-md);
-  border: none;
-  border-radius: 6px;
-  background-color: var(--color-accent-1, #4a9eff);
-  color: white;
-  font-weight: 500;
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-button:hover, .button:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
-}
-
-button:active, .button:active {
-  transform: translateY(0);
-  box-shadow: var(--shadow-sm);
-}
-
-/* Improved post metadata */
-.post-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
-  font-size: 0.9em;
-  color: rgba(0, 0, 0, 0.6);
-  margin-bottom: var(--spacing-md);
-}
-
-.post-meta time {
-  display: flex;
-  align-items: center;
-  gap: 0.3em;
-}
-
-/* Loading states */
-.loading {
-  opacity: 0.6;
-  pointer-events: none;
-  position: relative;
-}
-
-.loading::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 20px;
-  height: 20px;
-  margin: -10px 0 0 -10px;
-  border: 2px solid transparent;
-  border-top-color: var(--color-accent-1, #4a9eff);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Smooth page transitions */
-.content {
-  animation: fadeIn 0.3s ease-in;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive video embeds */
-.video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  margin: var(--spacing-lg) 0;
-  border-radius: 8px;
-  box-shadow: var(--shadow-md);
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Dark mode improvements */
-body.dark {
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.4);
+/* Logo fix */
+#header #logo {
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  filter: none !important;
+  -webkit-filter: none !important;
 }
 
-body.dark blockquote {
-  background-color: rgba(255, 255, 255, 0.02);
-  border-left-color: var(--color-accent-1, #4a9eff);
+/* Remove any theme animations */
+* {
+  animation: none !important;
 }
 
-body.dark pre {
-  background-color: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.1);
+/* Ensure navigation doesn't have underlines */
+#header #nav a {
+  background-image: none !important;
+  text-decoration: none !important;
 }
 
-body.dark code {
-  background-color: rgba(255, 255, 255, 0.05);
+#header #nav a:hover {
+  background-image: none !important;
 }
 
-body.dark input, 
-body.dark textarea, 
-body.dark select {
-  background-color: rgba(255, 255, 255, 0.02);
-  border-color: rgba(255, 255, 255, 0.1);
-  color: inherit;
+/* Fix any spacing issues from theme */
+.content {
+  padding: 0 !important;
 }
 
-body.dark .post-meta {
-  color: rgba(255, 255, 255, 0.6);
+.max-width.mx-auto.px3 {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  .max-width.mx-auto.px3 {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .max-width.mx-auto.px3 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
