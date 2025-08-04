@@ -19,7 +19,7 @@ I work primarily with **Ruby, Rails, RSpec, Kamal, PostgreSQL, SQL, Hotwire, and
 
 ### Languages
 
-I am fluent in English and Spanish, with intermediate proficiency in Italian.
+I am fluent in English and Spanish, with intermediate Italian.
 
 ### Location
 
