@@ -102,15 +102,38 @@
   margin-bottom: 1rem !important;
 }
 
-/* Fix body and main container spacing */
+/* Fix body and main container spacing while keeping centering */
 body {
   margin: 0 !important;
   padding-top: 0 !important;
 }
 
+/* Ensure main container stays centered */
+.max-width {
+  max-width: 48rem !important;
+  margin: 0 auto !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
 .content.index.py4 {
   padding-top: 0 !important;
   padding-bottom: 1rem !important;
+}
+
+/* Responsive padding */
+@media (min-width: 768px) {
+  .max-width {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .max-width {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 
 /* Force light mode */
