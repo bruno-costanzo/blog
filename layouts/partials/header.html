@@ -1,0 +1,47 @@
+<header id="header">
+  <a href="{{ "/" | absLangURL }}">
+  {{ if (isset .Site.Params "gravatar") }}
+    <div id="logo" style="background-image: url(https://www.gravatar.com/avatar/{{ md5 .Site.Params.gravatar }}?s=100&d=identicon)"></div>
+  {{ else if (isset .Site.Params "logo") }}
+    <div id="logo" style="background-image: url({{ .Site.Params.logo | absURL }})"></div>
+  {{ else }}
+    <div id="logo" style="background-image: url({{ "images/logo.png" | absURL }}?v={{ now.Unix }})"></div>
+  {{ end}}
+  <div id="title">
+    <h1>{{ .Site.Title }}</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
+      </li>
+      {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
+      <!-- Language Selector -->
+      <li class="lang-selector">
+        {{ range .Site.Languages }}
+          {{ if ne $.Site.Language.Lang .Lang }}
+            {{ if $.IsTranslated }}
+              <!-- Si la página tiene traducción, ir a ella -->
+              {{ range $.Translations }}
+                {{ if eq .Language.Lang .Lang }}
+                  <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+                {{ end }}
+              {{ end }}
+            {{ else }}
+              <!-- Si no hay traducción, ir al inicio del idioma -->
+              {{ $homeURL := "/" | relLangURL }}
+              {{ $langHomeURL := replace $homeURL (printf "/%s/" $.Site.Language.Lang) (printf "/%s/" .Lang) }}
+              <a href="{{ $langHomeURL }}">{{ .LanguageName }}</a>
+            {{ end }}
+          {{ else }}
+            <span class="active-lang">{{ .LanguageName }}</span>
+          {{ end }}
+        {{ end }}
+      </li>
+    </ul>
+  </div>
+</header>
+

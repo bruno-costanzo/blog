@@ -1,0 +1,86 @@
+/* Estilos para imagen destacada */
+.featured-image {
+    margin: 2rem 0;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.featured-image:hover img {
+    transform: scale(1.02);
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+    .featured-image {
+        margin: 1.5rem -1rem;
+        border-radius: 0;
+    }
+}
+
+/* Centrar imágenes en el contenido del post */
+.content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para galería de imágenes si existe */
+.article-gallery {
+    margin: 2rem 0;
+}
+
+/* Mejorar aspecto de las meta tags */
+.meta {
+    margin-bottom: 1.5rem;
+}
+
+.article-category,
+.article-tag {
+    margin-top: 0.5rem;
+}
+
+.category-link,
+.tag-link {
+    background-color: #f0f0f0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+}
+
+.category-link:hover,
+.tag-link:hover {
+    background-color: #e0e0e0;
+}
+
+/* Logo styling */
+#header #logo {
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Dark theme support */
+body.dark .category-link,
+body.dark .tag-link {
+    background-color: #333;
+    color: #ddd;
+}
+
+body.dark .category-link:hover,
+body.dark .tag-link:hover {
+    background-color: #444;
+}

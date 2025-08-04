@@ -33,12 +33,17 @@ jobs:
       # 4) Generar el sitio
       - name: Build
         run: |
+          echo "Starting build at: $(date)"
+          rm -rf public/
           hugo --minify --gc --cleanDestinationDir
-          echo "Build timestamp: $(date)"
+          echo "Build completed at: $(date)"
+          echo "Build version: ${{ github.sha }}"
+          echo "Contents of public/:"
           ls -la public/
+          echo "Contents of public/es/posts/:"
           ls -la public/es/posts/ || true
-          ls -la public/images/
-          ls -la public/images/posts/ || true
+          echo "Checking deploy test file:"
+          ls -la public/deploy-test-*.html || true
 
       # 5) Configurar GitHub Pages
       - name: Setup Pages
@@ -50,6 +55,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+          retention-days: 1
 
       # 7) Deploy a gh-pages
       - name: Deploy to GitHub Pages

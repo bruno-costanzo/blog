@@ -1,0 +1,5 @@
+{{ if .Params.image }}
+<div class="featured-image">
+    <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" loading="lazy">
+</div>
+{{ end }}

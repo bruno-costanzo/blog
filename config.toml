@@ -107,4 +107,5 @@ logo = "/blog/images/logo.png"
 defaultImage = "/blog/images/default-social.png"
 twitter = "tu_usuario_twitter" # Cambia esto por tu usuario de Twitter
 keywords = ["desarrollo", "programación", "tecnología", "software", "blog técnico"]
-css = ["/blog/css/custom.css"]
+css = ["/blog/css/custom.css?v=20250804"]
+buildVersion = "20250804-1"
