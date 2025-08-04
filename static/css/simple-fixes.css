@@ -1,0 +1,57 @@
+/* Simple fixes without breaking the theme */
+
+/* Fix navigation spacing */
+#header #nav ul li {
+  margin-right: 1rem !important;
+}
+
+#header #nav ul li:last-child {
+  margin-right: 0 !important;
+}
+
+/* Remove excessive spacing after headings */
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  margin-bottom: 0.75rem !important;
+}
+
+/* Fix paragraph spacing */
+.content p {
+  margin-bottom: 1rem !important;
+}
+
+/* Remove underlines from navigation */
+#header #nav a {
+  background-image: none !important;
+  text-decoration: none !important;
+}
+
+#header #nav a:hover {
+  background-image: none !important;
+}
+
+/* Hide floating menus */
+#footer-post,
+#menu,
+#menu-icon,
+#menu-icon-tablet,
+#top-icon-tablet {
+  display: none !important;
+}
+
+/* Force light mode */
+body {
+  background: #fff !important;
+  color: #333 !important;
+}
+
+/* Better mobile font size */
+@media (max-width: 767px) {
+  body {
+    font-size: 18px !important;
+  }
+}
