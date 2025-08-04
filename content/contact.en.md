@@ -17,8 +17,4 @@ Do you have any questions or comments? I'd love to hear from you.
 
 Currently living in **Zurich, Switzerland**.
 
-### Languages
-
-You can contact me in **English**, **Spanish**, or **intermediate Italian**.
-
 I usually respond within 24-48 hours.

@@ -17,8 +17,4 @@ date: 2025-08-02
 
 Actualmente vivo en **Zurich, Suiza**.
 
-### Idiomas
-
-Puedes contactarme en **español**, **inglés** o **italiano intermedio**.
-
 Normalmente respondo dentro de 24-48 horas.
