@@ -17,20 +17,8 @@ date: 2025-08-02
 
 Actualmente vivo en **Zurich, Suiza**.
 
-### Disponibilidad
-
-- Trabajo actualmente en **Renuo AG** (Zurich, Suiza)
-- Abierto a colaboraciones en proyectos interesantes
-- Disponible para consultoría técnica en Ruby on Rails
-
-### También puedes:
-
-- Dejar un comentario en cualquiera de mis artículos
-- Abrir un issue en alguno de mis proyectos de GitHub
-- Conectar conmigo en LinkedIn para networking profesional
-
 ### Idiomas
 
-Puedes contactarme en **español**, **inglés** o **italiano básico**.
+Puedes contactarme en **español**, **inglés** o **italiano intermedio**.
 
 Normalmente respondo dentro de 24-48 horas.
