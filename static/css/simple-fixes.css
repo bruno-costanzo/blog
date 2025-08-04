@@ -1,6 +1,10 @@
 /* Simple fixes without breaking the theme */
 
 /* Fix navigation spacing */
+#header #nav {
+  margin-top: 0.75rem !important;
+}
+
 #header #nav ul li {
   margin-right: 1rem !important;
   border-right: none !important;
