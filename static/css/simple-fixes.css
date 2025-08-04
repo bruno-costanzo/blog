@@ -14,14 +14,14 @@
   margin-right: 0 !important;
 }
 
-/* Remove excessive spacing after headings */
+/* Reduce spacing after headings */
 .content h1,
 .content h2,
 .content h3,
 .content h4,
 .content h5,
 .content h6 {
-  margin-bottom: 0.75rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
 /* Fix paragraph spacing */
