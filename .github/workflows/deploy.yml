@@ -33,7 +33,10 @@ jobs:
       # 4) Generar el sitio
       - name: Build
         run: |
-          hugo --minify
+          hugo --minify --gc --cleanDestinationDir
+          echo "Build timestamp: $(date)"
+          ls -la public/
+          ls -la public/es/posts/ || true
           ls -la public/images/
           ls -la public/images/posts/ || true
 
