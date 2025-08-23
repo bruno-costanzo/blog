@@ -38,24 +38,19 @@ url = "/es/"
 weight = 1
 
 [[languages.es.menu.main]]
-name = "Artículos"
-url = "/es/posts"
-weight = 2
-
-[[languages.es.menu.main]]
 name = "Proyectos"
 url = "/es/projects"
-weight = 3
+weight = 2
 
 [[languages.es.menu.main]]
 name = "Sobre mí"
 url = "/es/about"
-weight = 4
+weight = 3
 
 [[languages.es.menu.main]]
 name = "Contacto"
 url = "/es/contact"
-weight = 5
+weight = 4
 
 # Menús en inglés
 [[languages.en.menu.main]]
@@ -64,24 +59,19 @@ url = "/en/"
 weight = 1
 
 [[languages.en.menu.main]]
-name = "Articles"
-url = "/en/posts"
-weight = 2
-
-[[languages.en.menu.main]]
 name = "Projects"
 url = "/en/projects"
-weight = 3
+weight = 2
 
 [[languages.en.menu.main]]
 name = "About"
 url = "/en/about"
-weight = 4
+weight = 3
 
 [[languages.en.menu.main]]
 name = "Contact"
 url = "/en/contact"
-weight = 5
+weight = 4
 
 [services]
 [services.googleAnalytics]

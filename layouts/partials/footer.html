@@ -1,0 +1,12 @@
+<footer id="footer">
+  <div class="footer-content">
+    <div class="back-to-top">
+      <a href="#header" aria-label="Back to top" title="Volver arriba">
+        ↑
+      </a>
+    </div>
+    <div class="footer-copyright">
+      Copyright &copy; {{ now.Format "2006" }} {{ if .Site.Copyright }} {{ print .Site.Copyright | markdownify }} {{ else }} {{ print .Site.Title }} {{ end }}
+    </div>
+  </div>
+</footer>

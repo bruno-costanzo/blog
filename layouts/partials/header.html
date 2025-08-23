@@ -1,37 +1,30 @@
 <header id="header">
-  <a href="{{ "/" | absLangURL }}">
-  {{ if (isset .Site.Params "gravatar") }}
-    <div id="logo" style="background-image: url(https://www.gravatar.com/avatar/{{ md5 .Site.Params.gravatar }}?s=100&d=identicon)"></div>
-  {{ else if (isset .Site.Params "logo") }}
-    <div id="logo" style="background-image: url({{ .Site.Params.logo | absURL }})"></div>
-  {{ else }}
-    <div id="logo" style="background-image: url({{ "images/logo.png" | absURL }}?v={{ now.Unix }})"></div>
-  {{ end}}
-  <div id="title">
-    <h1>{{ .Site.Title }}</h1>
+  <div class="header-left">
+    <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}" class="site-title">
+      {{ if (isset .Site.Params "logo") }}
+        <img src="{{ .Site.Params.logo | absURL }}" alt="Logo" class="logo">
+      {{ end }}
+      <span>{{ .Site.Title }}</span>
+    </a>
   </div>
-  </a>
-  <div id="nav">
-    <ul>
-      <li class="icon">
-        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
-      </li>
+  
+  <div class="header-right">
+    <!-- Desktop Menu -->
+    <nav class="desktop-nav">
       {{ range .Site.Menus.main }}
-        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        <a href="{{ .URL }}">{{ .Name }}</a>
       {{ end }}
       <!-- Language Selector -->
-      <li class="lang-selector">
+      <div class="lang-selector">
         {{ range .Site.Languages }}
           {{ if ne $.Site.Language.Lang .Lang }}
             {{ if $.IsTranslated }}
-              <!-- Si la página tiene traducción, ir a ella -->
               {{ range $.Translations }}
                 {{ if eq .Language.Lang .Lang }}
                   <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
                 {{ end }}
               {{ end }}
             {{ else }}
-              <!-- Si no hay traducción, ir al inicio del idioma -->
               {{ $homeURL := "/" | relLangURL }}
               {{ $langHomeURL := replace $homeURL (printf "/%s/" $.Site.Language.Lang) (printf "/%s/" .Lang) }}
               <a href="{{ $langHomeURL }}">{{ .LanguageName }}</a>
@@ -40,8 +33,41 @@
             <span class="active-lang">{{ .LanguageName }}</span>
           {{ end }}
         {{ end }}
-      </li>
-    </ul>
+      </div>
+    </nav>
+    
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <!-- Mobile Menu -->
+    <nav class="mobile-nav">
+      {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+      <div class="lang-selector">
+        {{ range .Site.Languages }}
+          {{ if ne $.Site.Language.Lang .Lang }}
+            {{ if $.IsTranslated }}
+              {{ range $.Translations }}
+                {{ if eq .Language.Lang .Lang }}
+                  <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+                {{ end }}
+              {{ end }}
+            {{ else }}
+              {{ $homeURL := "/" | relLangURL }}
+              {{ $langHomeURL := replace $homeURL (printf "/%s/" $.Site.Language.Lang) (printf "/%s/" .Lang) }}
+              <a href="{{ $langHomeURL }}">{{ .LanguageName }}</a>
+            {{ end }}
+          {{ else }}
+            <span class="active-lang">{{ .LanguageName }}</span>
+          {{ end }}
+        {{ end }}
+      </div>
+    </nav>
   </div>
 </header>
 

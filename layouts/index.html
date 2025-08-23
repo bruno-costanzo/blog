@@ -1,0 +1,61 @@
+{{ define "main" }}
+  <div class="homepage-container">
+    <!-- Intro Section -->
+    <section class="intro-section">
+      {{ if isset .Site.Params "description" }}
+        <p class="intro-text">{{ .Site.Params.description | $.Page.RenderString }}</p>
+      {{ else }}
+        <p class="intro-text">Bienvenido a mi blog sobre desarrollo y tecnología.</p>
+      {{ end }}
+    </section>
+
+    <!-- Latest Posts -->
+    <section class="posts-section">
+      <div class="section-header">
+        <h2>{{ .Site.Params.mainSectionTitle | default "Últimos artículos" }}</h2>
+      </div>
+
+      {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
+      {{ $mainPosts := (sort ( where site.RegularPages "Type" "in" site.Params.mainSections ) "Date" "desc") }}
+      
+      <div class="posts-grid">
+        {{ range (first 6 $mainPosts) }}
+          <article class="post-card">
+            <a href="{{ .Permalink }}" class="card-link">
+              <div class="card-image">
+                {{ $featuredImage := "" }}
+                {{ if .Params.featured_image }}
+                  {{ $featuredImage = .Params.featured_image }}
+                {{ else if .Params.image }}
+                  {{ $featuredImage = .Params.image }}
+                {{ else }}
+                  {{ $featuredImage = "images/default-post.jpg" }}
+                {{ end }}
+                <img src="{{ $featuredImage | relURL }}" alt="{{ .Title }}" loading="lazy">
+                <div class="post-date">{{ .Date.Format $dataFormat }}</div>
+                <div class="card-overlay">
+                  <div class="card-content">
+                    <h3 class="post-title">{{ if .Title }}{{ .Title }}{{ else }}Untitled{{ end }}</h3>
+                    {{ if .Params.description }}
+                      <p class="post-summary">{{ .Params.description | truncate 100 }}</p>
+                    {{ else if .Summary }}
+                      <p class="post-summary">{{ .Summary | truncate 100 }}</p>
+                    {{ end }}
+                    {{ if .Params.tags }}
+                      <div class="post-tags">
+                        {{ range first 2 .Params.tags }}
+                          <span class="tag">{{ . }}</span>
+                        {{ end }}
+                      </div>
+                    {{ end }}
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+        {{ end }}
+      </div>
+
+    </section>
+  </div>
+{{ end }}
